@@ -1,0 +1,19 @@
+
+    <table class="table table-responsive">
+        <tr>
+                <th>ID</th>
+                <th>Category</th>
+                <th>Action</th>
+        </tr>
+        <tr *ngFor= "let category of data;let id = index" >
+            <td>{{ id+1  }}</td>
+            <td>{{ category.name }}</td>
+            <td>{{ category.id }}</td>
+            <td>
+                    <button class="btn btn-primary" >EDIT</button>
+            </td>
+            <td>
+                    <button class="btn btn-danger" (click)="delete(category.id)" >DELETE</button>
+            </td>
+        </tr>
+    </table>
