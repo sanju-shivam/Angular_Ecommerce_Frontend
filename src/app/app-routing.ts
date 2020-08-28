@@ -15,7 +15,7 @@ const route: Routes = [
       {path: 'category' , component: CategorybodyComponent , children: [
           {path: '', component: CategoryIndexComponent},
           {path: 'create', component: CategoryCreateComponent},
-          {path: 'edit', component: CategoryEditComponent},
+          {path: 'edit/:id', component: CategoryEditComponent},
       ]},
       {path: 'subcategory' , component: SuvCategoryBodyComponent, children: [
           {path: '', component: SuvCategoryIndexComponent},

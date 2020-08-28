@@ -11,13 +11,11 @@
                 </li>
                 <li>
                     <a href="javascript:void(0)">
-                        <i class="menu-icon icon-apps"></i><span>Apps</span><i class="accordion-icon fas fa-angle-left"></i>
+                        <i class="menu-icon icon-apps"></i><span>Category</span><i class="accordion-icon fas fa-angle-left"></i>
                     </a>
                     <ul class="sub-menu">
-                        <li><a href="app-mailbox.html">Mailbox</a></li>
-                        <li><a href="app-todo.html">Todo</a></li>
-                        <li><a href="app-contacts.html">Contacts</a></li>
-                        <li><a href="app-profile.html">Profile</a></li>
+                        <li><a [routerLink]="['\category','\create']" >Add Category</a></li>
+                        <li><a [routerLink]="['\category']" >View Category</a></li>
                     </ul>
                 </li>
                 <li>

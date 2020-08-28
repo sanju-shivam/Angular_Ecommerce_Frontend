@@ -8,9 +8,8 @@
         <tr *ngFor= "let category of data;let id = index" >
             <td>{{ id+1  }}</td>
             <td>{{ category.name }}</td>
-            <td>{{ category.id }}</td>
             <td>
-                    <button class="btn btn-primary" >EDIT</button>
+                    <button class="btn btn-primary" (click)="edit(category.id)" >EDIT</button>
             </td>
             <td>
                     <button class="btn btn-danger" (click)="delete(category.id)" >DELETE</button>
