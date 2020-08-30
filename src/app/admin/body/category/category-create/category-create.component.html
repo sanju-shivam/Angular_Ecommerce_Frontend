@@ -1,29 +1,19 @@
-<!-- 
-    <form method="POST">
-        <table class="table ">
-            <thead>
-                <tr>
-                    <label>CATEGORY NAME</label>
-                    <input type="text" name="Category" autocomplete="false" class="form-control" value="">
-                </tr><br>
-                <tr>
-                    <input type="submit" value="SUBMIT" class="btn btn-success">
-                </tr>
-            </thead>
-        </table>
-    </form> -->
 
+<div class="row">
+        <div class="col-xl">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Add Category</h5>
+                    <form [formGroup]="CategoryForm" (ngSubmit)="collectData()">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Category Name</label>
+                            <input type="text" class="form-control"formControlName="name" id="name" placeholder="Category">
+                            
+                        </div>
 
-<form [formGroup]="CategoryForm" (ngSubmit)="collectData()" >
-    <table class="table table-responsive-lg">
-        <thead>
-            <tr>
-                <label>CATEGORY NAME</label>
-                <input type="text" formControlName="name" id="name" class="form-control">
-            </tr><br>
-            <tr>
-                <button type="submit" id="form-submit" class="btn btn-danger">Send</button>
-            </tr>
-        </thead>
-    </table>
-</form>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
