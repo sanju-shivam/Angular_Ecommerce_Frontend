@@ -1,0 +1,83 @@
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Products</h5>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Image</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor= "let product of data;let ids = index" >
+                            <td scope="row">{{ ids+1  }}</td>
+                            <td scope="row">{{ product.name }}</td>
+                            <td scope="row">{{ product.price }}</td>
+                            <td scope="row">
+                                <img src="{{ product.image }}" style="height:30%;" alt="image not found">
+                            </td>
+                            <td>
+                                <button class="btn btn-info" [routerLink]="['view']" 
+                                [queryParams] ="{id : product.id}"
+                                  >
+                                    View Product
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" (click)="delete(product.id)" >
+                                    Delete Product
+                                </button>
+                            </td>
+                            <td scope="row">
+                                <!-- ADD BUTTOM IMAGE -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                    Add Image
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalCenterTitle">Add Image</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form [formGroup]="ProductImageForm" (ngSubmit)="collectData()">
+                                                    <div *ngIf="error" class="alert alert-danger" >
+                                                        <p>IMAGE SIZE ERROR 3 MB MAX</p>
+                                                    </div>
+                
+                                                    <div class="form-group" >
+                                                        <label for="image">Product Image</label>
+                                                        <div class="custom-file">
+                                                            <input type="file" 
+                                                            (click)="setId(product.id)"  (change)="onFileSelected($event)"  class="custom-file-input form-control" id="customFile">
+                                                            <input type="hidden"  formControlName="image" >
+                                                            <label class="custom-file-label" for="customFile">Choose file</label>
+                                                        </div> 
+                                                    </div>
+                                                    
+                                                    <button type="submit" class="btn btn-primary" [disabled] ="disable" >
+                                                        <span [hidden] ="!disable" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                                        {{ disable ? 'Wait Please' : 'Submit' }}
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>      
+        </div>
+    </div>

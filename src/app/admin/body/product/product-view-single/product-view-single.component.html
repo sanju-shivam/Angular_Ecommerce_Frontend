@@ -1,0 +1,98 @@
+<!-- 
+   
+        <div class="card-body">
+            <div class="row">
+                    <div class="col-xl">
+                        <div class="card">
+                            <div class="card-body">
+                                <h1 class="card-title">{{ productDetails.name }}</h1><br>
+                                <h1 class="card-title">Description</h1>
+                                <p>{{ productDetails.description }}</p>
+                                <div class="media">
+                                    <img src="{{ productDetails.image }}" class="w mr-3" alt="wait image is loading">
+                                    <div class="media-body col-md">
+                                        <h5 class="mt-0">Category : {{ category }}</h5>
+                                        <h5 class="mt-0">Sub-Category : {{ subcategory }}</h5>
+                                        <h5 class="mt-0">Brand : {{ brand }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+ -->
+
+
+ 
+ <div class="container card" >
+        
+       
+    <div class="row text-center ">
+         <div class="col-md-5 mt-5 mb-3 ml-auto">
+             <img src="{{ productDetails.image }}" style="height: 100%; width: 100%;" alt="">
+         </div>
+         
+         <div class="col-md-1 mt-1 mb-1 "></div>
+
+         <div class="col-md-5 my-auto mt-3 mb-3">
+            <h3>Name</h3>
+            <h3>{{ productDetails.name }}</h3>
+         </div>
+    </div>
+
+    <div class="divider" ></div>
+
+    <div class="row text-center">
+        <div class=" card-body col-md-4  mt-3 mb-3">
+            <h4>Product Brand</h4>
+            <h4>{{ brand }}</h4>
+        </div>
+        <div class="card-body col-md-4  mt-3 mb-3">
+            <h4>Product Category</h4>
+            <h4>{{ category }}</h4>
+        </div>
+        <div class="card-body col-md-4 mt-3 mb-3">
+            <h4>Product Sub-Category</h4>
+            <h4>{{ subcategory }}</h4>
+        </div>
+    </div>
+
+    <div class="divider" ></div>
+
+    <div class="row text-justify m-3">
+        <div class="col-md-12">
+            <h2>Product Description</h2>
+            <br>
+            <h5 class="card-title" >{{ productDetails.description }}</h5>
+        </div>
+    </div>
+
+    <div class="divider" ></div>
+
+    <div class="row text-center">
+        <div class=" card-body col-md-4  mt-3 mb-3">
+            <h4>Product Quantity</h4>
+            <h4>{{ productDetails.quantity }}</h4>
+        </div>
+        <div class="card-body col-md-4  mt-3 mb-3">
+            <h4>Product Code</h4>
+            <h4>{{ productDetails.code }}</h4>
+        </div>
+        <div class="card-body col-md-4 mt-3 mb-3">
+            <h4>ProductSub Price</h4>
+            <h4><i class="fa fa-rupee" ></i>{{ productDetails.price }}</h4>
+        </div>
+    </div>
+
+    <div class="divider" ></div>
+
+    <div class="row  m-3">
+       <div *ngFor="let image of productImages"  class="col-md-4 mt-3 mb-3">
+           <img src="{{ image.image }}" alt="wait Loading" style="height: 100%; width: 100%;" >
+       </div>
+    </div>
+    
+    
+
+ </div>

@@ -16,6 +16,30 @@ import { SuvCategoryIndexComponent } from './admin/body/subcategory/suv-category
 import { SuvCategoryCreateComponent } from './admin/body/subcategory/suv-category-create/suv-category-create.component';
 import { SubCategoryEditComponent } from './admin/body/subcategory/sub-category-edit/sub-category-edit.component';
 
+
+// FIREBASE
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { environment } from "../environments/environment";
+import { AngularFireStorage } from '@angular/fire/storage';
+
+
+
+
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { BrandcreateComponent } from './admin/body/brand/brandcreate/brandcreate.component';
+import { BrandBodyComponent } from './admin/body/brand/brand-body/brand-body.component';
+import { BrandEditComponent } from './admin/body/brand/brand-edit/brand-edit.component';
+import { BrandIndexComponent } from './admin/body/brand/brand-index/brand-index.component';
+import { ProductCreateComponent } from './admin/body/product/product-create/product-create.component';
+import { ProductIndexComponent } from './admin/body/product/product-index/product-index.component';
+import { ProductEditComponent } from './admin/body/product/product-edit/product-edit.component';
+import { ProductBodyComponent } from './admin/body/product/product-body/product-body.component';
+import { ProductViewSingleComponent } from './admin/body/product/product-view-single/product-view-single.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +54,15 @@ import { SubCategoryEditComponent } from './admin/body/subcategory/sub-category-
     SuvCategoryIndexComponent,
     SuvCategoryCreateComponent,
     SubCategoryEditComponent,
+    BrandcreateComponent,
+    BrandBodyComponent,
+    BrandEditComponent,
+    BrandIndexComponent,
+    ProductCreateComponent,
+    ProductIndexComponent,
+    ProductEditComponent,
+    ProductBodyComponent,
+    ProductViewSingleComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +70,9 @@ import { SubCategoryEditComponent } from './admin/body/subcategory/sub-category-
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'Angular-ecommerce'),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule // Only required for storage features
   ],
   providers: [],
   bootstrap: [AppComponent]

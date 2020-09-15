@@ -20,9 +20,7 @@ export class CategoryService {
   }
 
   deleteCategory(id){
-    return this.htttpClient.post('http://127.0.0.1:8000/api/category/delete',id).subscribe( res => {
-      console.log(res);
-     });
+    return this.htttpClient.post('http://127.0.0.1:8000/api/category/delete',id);
   }
 
   editCategory(data){

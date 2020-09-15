@@ -1,0 +1,33 @@
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Brands</h5>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor= "let category of data;let id = index" >
+                                <th scope="row">{{ id+1  }}</th>
+                                <td>{{ category.name }}</td>
+                                <td>
+                                        <button class="btn btn-primary" (click)="edit(category.id)" >
+                                            EDIT
+                                        </button>
+                                </td>
+                                <td>
+                                        <button class="btn btn-danger" (click)="delete(category.id)" >
+                                                DELETE
+                                        </button>
+                                </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>      
+        </div>
+    </div>

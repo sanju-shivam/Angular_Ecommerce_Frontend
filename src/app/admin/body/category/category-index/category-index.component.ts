@@ -18,14 +18,20 @@ export class CategoryIndexComponent implements OnInit {
               ) { }
  
   ngOnInit(): void {  
+    this.TogetallCategory();
+  }
+
+  TogetallCategory(){
     this.category.getallCategory().subscribe( res => {
-     this.data =  res;
-    });
+      this.data =  res;
+     });
   }
   
   delete(id){
     const data = [ id];
-    this.category.deleteCategory(data);
+    this.category.deleteCategory(data).subscribe( res => {
+      this.TogetallCategory();
+     });
   }
 
   edit(id){
