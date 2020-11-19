@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../product/product.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -14,13 +14,21 @@ export class ProductViewSingleComponent implements OnInit {
   category;
   subcategory;
   brand;
-  constructor(private product: ProductService, private route : ActivatedRoute) { }
+  DATATOTRANSFER;
+
+  
+  constructor(
+              private product: ProductService,
+              private route : ActivatedRoute,
+              private Router: Router
+            ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.queryParams;
      console.log(id['id']);
     this.product.showSingleProduct(id).subscribe(res =>{
       //console.log(res);
+      this.DATATOTRANSFER = res;
       this.productDetails = res['product'];
       this.category = res['category'];
       this.subcategory = res['subcategory'];
@@ -28,7 +36,11 @@ export class ProductViewSingleComponent implements OnInit {
       //console.log(this.productDetails);
       this.productImages = res['images'];
     })
- 
+  }
+
+
+  edit(){
+    this.Router.navigate(['admin','product','edit'],{queryParams: this.route.snapshot.queryParams});
   }
   
 }

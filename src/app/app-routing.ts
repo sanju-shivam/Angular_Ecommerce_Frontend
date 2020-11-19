@@ -18,6 +18,10 @@ import { ProductIndexComponent } from './admin/body/product/product-index/produc
 import { ProductCreateComponent } from './admin/body/product/product-create/product-create.component';
 import { ProductEditComponent } from './admin/body/product/product-edit/product-edit.component';
 import { ProductViewSingleComponent } from './admin/body/product/product-view-single/product-view-single.component';
+import { BannerBodyComponent } from './admin/body/banner/banner-body/banner-body.component';
+import { BannerIndexComponent } from './admin/body/banner/banner-index/banner-index.component';
+import { BannerCreateComponent } from './admin/body/banner/banner-create/banner-create.component';
+import { BannerEditComponent } from './admin/body/banner/banner-edit/banner-edit.component';
 
 const route: Routes = [
   {path: 'admin' , component: BodyComponent , children: [
@@ -39,10 +43,15 @@ const route: Routes = [
       {path: 'product' , component: ProductBodyComponent , children: [
         {path: '', component: ProductIndexComponent},
         {path: 'create', component: ProductCreateComponent},
-        {path: 'edit/:id', component: ProductEditComponent},
+        {path: 'edit', component: ProductEditComponent},
         {path: 'view', component: ProductViewSingleComponent},
     ]},
-  ]}  
+    {path: 'banner' , component: BannerBodyComponent , children: [
+        {path: '', component: BannerIndexComponent},
+        {path: 'create', component: BannerCreateComponent},
+        {path: 'edit', component: BannerEditComponent},
+    ]},
+  ]}
 ];
   
   @NgModule({

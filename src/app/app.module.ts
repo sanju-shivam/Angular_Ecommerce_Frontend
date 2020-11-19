@@ -37,6 +37,10 @@ import { ProductIndexComponent } from './admin/body/product/product-index/produc
 import { ProductEditComponent } from './admin/body/product/product-edit/product-edit.component';
 import { ProductBodyComponent } from './admin/body/product/product-body/product-body.component';
 import { ProductViewSingleComponent } from './admin/body/product/product-view-single/product-view-single.component';
+import { BannerBodyComponent } from './admin/body/banner/banner-body/banner-body.component';
+import { BannerEditComponent } from './admin/body/banner/banner-edit/banner-edit.component';
+import { BannerIndexComponent } from './admin/body/banner/banner-index/banner-index.component';
+import { BannerCreateComponent } from './admin/body/banner/banner-create/banner-create.component';
 
 
 
@@ -63,6 +67,10 @@ import { ProductViewSingleComponent } from './admin/body/product/product-view-si
     ProductEditComponent,
     ProductBodyComponent,
     ProductViewSingleComponent,
+    BannerBodyComponent,
+    BannerEditComponent,
+    BannerIndexComponent,
+    BannerCreateComponent,
   ],
   imports: [
     BrowserModule,

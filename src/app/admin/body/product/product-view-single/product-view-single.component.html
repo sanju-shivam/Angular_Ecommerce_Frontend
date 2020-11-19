@@ -1,32 +1,8 @@
-<!-- 
-   
-        <div class="card-body">
-            <div class="row">
-                    <div class="col-xl">
-                        <div class="card">
-                            <div class="card-body">
-                                <h1 class="card-title">{{ productDetails.name }}</h1><br>
-                                <h1 class="card-title">Description</h1>
-                                <p>{{ productDetails.description }}</p>
-                                <div class="media">
-                                    <img src="{{ productDetails.image }}" class="w mr-3" alt="wait image is loading">
-                                    <div class="media-body col-md">
-                                        <h5 class="mt-0">Category : {{ category }}</h5>
-                                        <h5 class="mt-0">Sub-Category : {{ subcategory }}</h5>
-                                        <h5 class="mt-0">Brand : {{ brand }}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
- -->
 
-
- 
  <div class="container card" >
-        
+        <button (click)="edit()" class=" col-md-12 mx-auto btn btn-outline-primary">
+            EDIT
+        </button>
        
     <div class="row text-center ">
          <div class="col-md-5 mt-5 mb-3 ml-auto">
@@ -92,7 +68,5 @@
            <img src="{{ image.image }}" alt="wait Loading" style="height: 100%; width: 100%;" >
        </div>
     </div>
-    
-    
 
  </div>

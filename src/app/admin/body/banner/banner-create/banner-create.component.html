@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-xl">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Add Banner</h5>
+                <form [formGroup]="BannerForm" (ngSubmit)="collectData()" >
+                    <div class="form-group">
+                        <label>Banner Title</label>
+                        <input type="text" formControlName="title" class="form-control" name="title"  placeholder="Enter Banner Title">
+                    </div>
+                    <div class="form-group">
+                        <label>Banner Url</label>
+                        <input type="text" formControlName="url" class="form-control" name="url"  placeholder="Enter Banner Url">
+                    </div>
+                    <div class="form-group">
+                        <label>Banner Image</label>
+                        <div class="custom-file">
+                            <input type="file" (change)="onFileSelected($event)" name="BannerImage" class="custom-file-input form-control" required id="customFile">
+                            <label class="custom-file-label" for="customFile">Choose file</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled] ="disable">
+                            <span [hidden] ="!disable" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        {{ disable ? 'Wait Please' : 'Submit' }}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <button type="submit" class="btn btn-primary">Submit</button> -->

@@ -10,6 +10,7 @@
                             <th scope="col">Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Image</th>
+                            <th scope="col" >Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -20,6 +21,10 @@
                             <td scope="row">{{ product.price }}</td>
                             <td scope="row">
                                 <img src="{{ product.image }}" style="height:30%;" alt="image not found">
+                            </td>
+                            <td>
+                                    <input type="checkbox" checked data-toggle="toggle">
+                                <input type="checkbox"class="Status btn btn-success" data-toggle="toggle" name="status">
                             </td>
                             <td>
                                 <button class="btn btn-info" [routerLink]="['view']" 

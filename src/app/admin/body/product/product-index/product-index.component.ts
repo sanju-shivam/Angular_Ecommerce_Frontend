@@ -84,9 +84,9 @@ export class ProductIndexComponent implements OnInit {
   collectData(){
     this.disable = true;
     var n = (Date.now()+'Product');
-    const filePath = `Product/${n}`;
+    const filePath = `ProductImage/${n}`;
     const fileRef = this.storage.ref(filePath);
-    const task = this.storage.upload(`Product/${n}`, this.selectedImage);
+    const task = this.storage.upload(`ProductImage/${n}`, this.selectedImage);
     task
       .snapshotChanges()
       .pipe(
