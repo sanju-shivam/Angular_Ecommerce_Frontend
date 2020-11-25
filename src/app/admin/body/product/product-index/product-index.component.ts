@@ -116,4 +116,14 @@ export class ProductIndexComponent implements OnInit {
     });
   }
 
+  changestatus(status, id){
+    var d =  [
+      status.target.value,
+      id
+    ];
+    this.product.productStatus(d).subscribe(res =>{
+      console.log(res);
+    });
+  }
+
 }

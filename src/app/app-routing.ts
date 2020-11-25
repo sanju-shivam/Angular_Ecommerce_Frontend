@@ -22,9 +22,11 @@ import { BannerBodyComponent } from './admin/body/banner/banner-body/banner-body
 import { BannerIndexComponent } from './admin/body/banner/banner-index/banner-index.component';
 import { BannerCreateComponent } from './admin/body/banner/banner-create/banner-create.component';
 import { BannerEditComponent } from './admin/body/banner/banner-edit/banner-edit.component';
+import { AuthGuard } from './guards/auth.guard';
+import { LoginComponent } from './login/login.component';
 
 const route: Routes = [
-  {path: 'admin' , component: BodyComponent , children: [
+  {path: 'admin' , component: BodyComponent ,canActivateChild: [AuthGuard] ,children: [
       {path: 'category' , component: CategorybodyComponent , children: [
           {path: '', component: CategoryIndexComponent},
           {path: 'create', component: CategoryCreateComponent},
@@ -51,7 +53,8 @@ const route: Routes = [
         {path: 'create', component: BannerCreateComponent},
         {path: 'edit', component: BannerEditComponent},
     ]},
-  ]}
+  ]},
+  {path: 'login',component: LoginComponent },
 ];
   
   @NgModule({

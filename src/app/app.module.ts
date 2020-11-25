@@ -24,10 +24,11 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from "../environments/environment";
 import { AngularFireStorage } from '@angular/fire/storage';
 
+import { AngularFireAuthModule } from "@angular/fire/auth";
+// import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 
-import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { BrandcreateComponent } from './admin/body/brand/brandcreate/brandcreate.component';
 import { BrandBodyComponent } from './admin/body/brand/brand-body/brand-body.component';
 import { BrandEditComponent } from './admin/body/brand/brand-edit/brand-edit.component';
@@ -41,6 +42,7 @@ import { BannerBodyComponent } from './admin/body/banner/banner-body/banner-body
 import { BannerEditComponent } from './admin/body/banner/banner-edit/banner-edit.component';
 import { BannerIndexComponent } from './admin/body/banner/banner-index/banner-index.component';
 import { BannerCreateComponent } from './admin/body/banner/banner-create/banner-create.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -71,6 +73,7 @@ import { BannerCreateComponent } from './admin/body/banner/banner-create/banner-
     BannerEditComponent,
     BannerIndexComponent,
     BannerCreateComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,7 +82,8 @@ import { BannerCreateComponent } from './admin/body/banner/banner-create/banner-
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'Angular-ecommerce'),
-    AngularFireDatabaseModule,
+    // AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AngularFireStorageModule // Only required for storage features
   ],
   providers: [],

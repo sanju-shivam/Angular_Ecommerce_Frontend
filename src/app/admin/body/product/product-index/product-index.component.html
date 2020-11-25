@@ -11,7 +11,7 @@
                             <th scope="col">Price</th>
                             <th scope="col">Image</th>
                             <th scope="col" >Status</th>
-                            <th>Action</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,8 +23,10 @@
                                 <img src="{{ product.image }}" style="height:30%;" alt="image not found">
                             </td>
                             <td>
-                                    <input type="checkbox" checked data-toggle="toggle">
-                                <input type="checkbox"class="Status btn btn-success" data-toggle="toggle" name="status">
+                                <select name="status" (change)="changestatus($event,product.id)" class="form-control custom-select">
+                                    <option [selected]="product.status == 0 " value="0">Disable</option>
+                                    <option [selected]="product.status == 1 " value="1">Enable</option>
+                                </select>
                             </td>
                             <td>
                                 <button class="btn btn-info" [routerLink]="['view']" 

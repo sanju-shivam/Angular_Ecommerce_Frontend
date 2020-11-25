@@ -5,3 +5,5 @@
 @import "~assets/plugins/bootstrap/css/bootstrap.min.css";
 @import "~assets/plugins/font-awesome/css/all.min.css";
 @import "~assets/plugins/switchery/switchery.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js";

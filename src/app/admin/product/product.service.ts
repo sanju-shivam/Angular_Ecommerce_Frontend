@@ -55,6 +55,10 @@ export class ProductService {
     return this.httpClient.post(this.url+'/update',data);
   }
 
+  productStatus(data){
+    return this.httpClient.post(this.url+'/statusupdate',data)
+  }
+
 }
 
 
