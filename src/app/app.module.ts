@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './admin/header/header.component';
 import { FooterComponent } from './admin/footer/footer.component';
@@ -22,10 +22,9 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from "../environments/environment";
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorage } from '@angular/fire/storage';
-
 import { AngularFireAuthModule } from "@angular/fire/auth";
-// import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 
@@ -43,6 +42,12 @@ import { BannerEditComponent } from './admin/body/banner/banner-edit/banner-edit
 import { BannerIndexComponent } from './admin/body/banner/banner-index/banner-index.component';
 import { BannerCreateComponent } from './admin/body/banner/banner-create/banner-create.component';
 import { LoginComponent } from './login/login.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { CouponBodyComponent } from './admin/body/coupons/coupon-body/coupon-body.component';
+import { CouponCreateComponent } from './admin/body/coupons/coupon-create/coupon-create.component';
+import { CouponIndexComponent } from './admin/body/coupons/coupon-index/coupon-index.component';
+import { CouponEditComponent } from './admin/body/coupons/coupon-edit/coupon-edit.component';
 
 
 
@@ -74,15 +79,21 @@ import { LoginComponent } from './login/login.component';
     BannerIndexComponent,
     BannerCreateComponent,
     LoginComponent,
+    ForgetPasswordComponent,
+    ResetPasswordComponent,
+    CouponBodyComponent,
+    CouponCreateComponent,
+    CouponIndexComponent,
+    CouponEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule ,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'Angular-ecommerce'),
-    // AngularFireDatabaseModule,
+    AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireStorageModule // Only required for storage features
   ],

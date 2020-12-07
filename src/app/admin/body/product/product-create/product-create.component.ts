@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../product/product.service';
 import { FormGroup, FormControl, FormArray, Validators} from '@angular/forms';
 import { AngularFireStorage } from "@angular/fire/storage";
-import { map, finalize } from "rxjs/operators";
-import { Observable } from "rxjs";
+import { finalize } from "rxjs/operators";
 
 @Component({
   selector: 'app-product-create',

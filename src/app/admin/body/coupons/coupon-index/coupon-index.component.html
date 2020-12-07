@@ -1,0 +1,42 @@
+
+    <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Coupons</h5>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Amount To Activate</th>
+                                <th scope="col">Discount Percent</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">Expire Date</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor= "let data of datas;let id = index" >
+                                    <th scope="row">{{ id+1  }}</th>
+                                    <td>{{ data.name }}</td>
+                                    <td> {{ data.minimun_discount_amount }}</td>
+                                    <td> {{ data.discount_percent }}</td>
+                                    <td> {{ data.start_date }}</td>
+                                    <td> {{ data.expiry_date }}</td>
+                                    <td>
+                                            <button class="btn btn-primary" (click)="edit(data.id)" >
+                                                EDIT
+                                            </button>
+                                    </td>
+                                    <td>
+                                            <button class="btn btn-danger" (click)="delete(data.id)" >
+                                                    DELETE
+                                            </button>
+                                    </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>      
+            </div>
+        </div>
+    

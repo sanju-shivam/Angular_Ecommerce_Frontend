@@ -22,11 +22,17 @@ import { BannerBodyComponent } from './admin/body/banner/banner-body/banner-body
 import { BannerIndexComponent } from './admin/body/banner/banner-index/banner-index.component';
 import { BannerCreateComponent } from './admin/body/banner/banner-create/banner-create.component';
 import { BannerEditComponent } from './admin/body/banner/banner-edit/banner-edit.component';
-import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './login/login.component';
+import { AdminGuard } from './guards/admin.guard';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { CouponCreateComponent } from './admin/body/coupons/coupon-create/coupon-create.component';
+import { CouponBodyComponent } from './admin/body/coupons/coupon-body/coupon-body.component';
+import { CouponIndexComponent } from './admin/body/coupons/coupon-index/coupon-index.component';
+import { CouponEditComponent } from './admin/body/coupons/coupon-edit/coupon-edit.component';
 
 const route: Routes = [
-  {path: 'admin' , component: BodyComponent ,canActivateChild: [AuthGuard] ,children: [
+  {path: 'admin' , component: BodyComponent ,canActivate : [AdminGuard] ,children: [
       {path: 'category' , component: CategorybodyComponent , children: [
           {path: '', component: CategoryIndexComponent},
           {path: 'create', component: CategoryCreateComponent},
@@ -53,8 +59,16 @@ const route: Routes = [
         {path: 'create', component: BannerCreateComponent},
         {path: 'edit', component: BannerEditComponent},
     ]},
+    {path : 'coupon', component : CouponBodyComponent, children: [
+        {path: '' , component: CouponIndexComponent},
+        {path: 'create' , component: CouponCreateComponent},
+        {path: 'edit' , component: CouponEditComponent},
+    ]},
   ]},
-  {path: 'login',component: LoginComponent },
+  
+  {path: 'admin/login',component: LoginComponent },
+  {path : 'admin/forget-password', component: ForgetPasswordComponent},
+  {path: 'admin/reset-password',component:ResetPasswordComponent}
 ];
   
   @NgModule({

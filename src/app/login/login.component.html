@@ -1,11 +1,35 @@
-<form [formGroup]="login" (ngSubmit)="logins()">
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email</label>
-        <input type="email" class="form-control"formControlName="email" id="email" placeholder="email">
-        <label for="exampleInputEmail1">Password</label>
-        <input type="password" class="form-control"formControlName="password" id="password" placeholder="password">
-        
-    </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+        <!-- Page Container -->
+<div class="page-container">
+    <div class="login">
+        <div class="login-bg"></div>
+        <div class="login-content">
+            <div class="login-box">
+                <div class="login-header">
+                    <h3>Log In</h3>
+                    <p>Welcome back! Please login to continue.</p>
+                </div>
+                <div class="login-body">                   
+                    <form [formGroup]="login" (ngSubmit)="logins()" >
+                        <div class="form-group">
+                            <input type="email" class="form-control"formControlName="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                        </div>
+                        <div class="custom-control custom-checkbox form-group">
+                            <input type="checkbox" class="custom-control-input" id="exampleCheck1">
+                            <label class="custom-control-label" for="exampleCheck1">Remember password</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                    <p class="m-t-sm"><a [routerLink]="['/admin/forget-password']" >Forgot password?</a><br><a href="register.html">Create an account</a></p>
+                </div>
+                <div class="login-footer">
+                    <p>Copyright @Stacks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /Page Container -->
+       

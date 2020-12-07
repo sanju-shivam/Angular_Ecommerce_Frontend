@@ -56,6 +56,15 @@
                 </li>
                 <li>
                     <a href="javascript:void(0)">
+                        <i class="menu-icon icon-layers"></i><span>Coupon</span><i class="accordion-icon fas fa-angle-left"></i>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a [routerLink]="['\coupon','\create']" >Add Coupon</a></li>
+                        <li><a [routerLink]="['\coupon']" >View Coupon</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
                         <i class="menu-icon icon-code"></i><span>Forms</span><i class="accordion-icon fas fa-angle-left"></i>
                     </a>
                     <ul class="sub-menu">
@@ -156,9 +165,9 @@
                         <li class="dropdown nav-item d-md-block">
                             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../assets/images/avatars/avatar1.png" alt="" class="rounded-circle"></a>
                             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <li><a href="#">Profile</a></li>
-                                <li><a href="#">Account Settings</a></li>
-                                <li><a href="#">Log Out</a></li>
+                                <li><button class="btn btn-block">Profile</button></li>
+                                <li><button class="btn btn-block">Account Settings</button></li>
+                                <li><button class="btn btn-block" (click)="logout()" >Log Out</button></li>
                             </ul>
                         </li>
                     </ul>
