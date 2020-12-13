@@ -25,5 +25,13 @@ export class CouponsService {
   	return this.http.get(this.url+"coupons/"+id+"/edit");
   }
 
+  updateCoupon(data,id){
+    return this.http.put(this.url+"coupons/"+id,data);
+  }
+
+  deleteCoupon(id){
+    return this.http.delete(this.url+"coupons/"+id);
+  }
+
   
 }

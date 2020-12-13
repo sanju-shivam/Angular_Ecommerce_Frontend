@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CouponsService } from '../../../services/coupons.service';
-import { Router} from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-coupon-index',
@@ -9,7 +9,7 @@ import { Router} from '@angular/router';
 })
 export class CouponIndexComponent implements OnInit {
   datas;
-  constructor(private CouponService: CouponsService, private Router: Router) { }
+  constructor(private CouponService: CouponsService, private Router: Router, private Active: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getCoupons();
@@ -22,11 +22,21 @@ export class CouponIndexComponent implements OnInit {
   }
 
   edit(id){
-    this.Router.navigate(['admin','coupon','edit'], { queryParams : id });
+    const ids = id;
+    this.Router.navigate(['edit/',ids], { relativeTo: this.Active });
   }
   
   delete(id){
-    
+    this.datas = this.datas.filter(el => el.id != id);
+    console.log(this.datas);
+    this.CouponService.deleteCoupon(id).subscribe(res => {
+      if(res == 1){
+        console.log('deleted');
+      }
+      else{
+        console.log(' not deleted');
+      }
+    });
   }
   
 

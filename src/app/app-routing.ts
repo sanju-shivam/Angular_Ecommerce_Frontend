@@ -62,7 +62,7 @@ const route: Routes = [
     {path : 'coupon', component : CouponBodyComponent, children: [
         {path: '' , component: CouponIndexComponent},
         {path: 'create' , component: CouponCreateComponent},
-        {path: 'edit' , component: CouponEditComponent},
+        {path: 'edit/:id' , component: CouponEditComponent},
     ]},
   ]},
   
@@ -72,7 +72,7 @@ const route: Routes = [
 ];
   
   @NgModule({
-    imports: [RouterModule.forRoot(route)],
+    imports: [RouterModule.forRoot(route, {useHash:true})],
     exports: [RouterModule]
   })
   export class AppRoutingModule { }
