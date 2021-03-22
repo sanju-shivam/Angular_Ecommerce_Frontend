@@ -72,7 +72,7 @@ const route: Routes = [
 ];
   
   @NgModule({
-    imports: [RouterModule.forRoot(route, {useHash:true})],
+    imports: [RouterModule.forRoot(route, { useHash: true, initialNavigation: 'enabled' })],
     exports: [RouterModule]
   })
   export class AppRoutingModule { }

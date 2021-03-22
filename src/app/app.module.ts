@@ -87,7 +87,7 @@ import { CouponEditComponent } from './admin/body/coupons/coupon-edit/coupon-edi
     CouponEditComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
