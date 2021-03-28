@@ -124,7 +124,7 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/Angular-Fresh/server",
-            "main": "server.ts",
+            "main": "main.server.ts",
             "tsConfig": "tsconfig.server.json"
           },
           "configurations": {

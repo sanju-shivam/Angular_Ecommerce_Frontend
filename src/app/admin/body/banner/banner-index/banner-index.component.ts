@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BannerService } from 'src/app/admin/services/banner.service';
 
 @Component({
   selector: 'app-banner-index',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerIndexComponent implements OnInit {
 
-  constructor() { }
+  Banners : any;
+
+  constructor(private Banner: BannerService) { }
 
   ngOnInit(): void {
+    this.getAllBanners()
+  }
+
+  getAllBanners(){
+    this.Banner.getAllBanners().subscribe(res => {
+      this.Banners = res['data'];
+    })
+  }
+
+  delete(id){
+    this.Banner.deleteBanner(id).subscribe(res => {
+      this.Banners.filter(banner => banner.id != id);
+    })
   }
 
 }

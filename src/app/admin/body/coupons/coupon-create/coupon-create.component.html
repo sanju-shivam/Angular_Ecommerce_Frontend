@@ -36,9 +36,9 @@
                                 required
                                 type="date"
                                 [readonly]="firstpickstartdate"
-                                (mouseover)="checkforstartpick()"
+                                (click)="checkforstartpick()"
                                 class="form-control"
-                                [(min)]="mindate"
+                                [min]="mindate"
                                 formControlName="ExpiryDate"
                             >
                             <!-- <br> -->

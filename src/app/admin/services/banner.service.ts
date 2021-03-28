@@ -12,5 +12,13 @@ export class BannerService {
   saveBanner(data){
     return this.htttpClient.post(this.urls+'/save',data);
   }
+
+  getAllBanners(){
+    return this.htttpClient.get(this.urls+'/get/all');
+  }
+
+  deleteBanner(id){
+    return this.htttpClient.get(this.urls+'/delete/'+id);
+  }
   
 }

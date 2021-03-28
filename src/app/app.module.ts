@@ -95,7 +95,7 @@ import { CouponEditComponent } from './admin/body/coupons/coupon-edit/coupon-edi
     AngularFireModule.initializeApp(environment.firebaseConfig, 'Angular-ecommerce'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFireStorageModule // Only required for storage features
+    AngularFireStorageModule, // Only required for storage features
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  appUrl : "http://127.0.0.1:8000/api/",
   firebaseConfig : {
     apiKey: "AIzaSyBr1pX-jScmj_52dZQ7kWHtttiTC1pv_5Q",
     authDomain: "angular-ecommerce-cc820.firebaseapp.com",

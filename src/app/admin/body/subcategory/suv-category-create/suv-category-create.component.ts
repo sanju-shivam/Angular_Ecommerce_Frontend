@@ -28,6 +28,7 @@ export class SuvCategoryCreateComponent implements OnInit {
  {
    this.SucategoryService.savesubcategory(this.SubcategoryForm.value).subscribe( res =>{
       console.log(res);
+      this.SubcategoryForm.reset();
     });
  }
 
