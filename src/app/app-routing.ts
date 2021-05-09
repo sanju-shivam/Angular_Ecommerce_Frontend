@@ -66,13 +66,18 @@ const route: Routes = [
     ]},
   ]},
   
+  {
+    path: '',
+    loadChildren: () => import('./modules/frontend/home/home.module').then(m => m.HomeModule),
+  },
+  
   {path: 'admin/login',component: LoginComponent },
   {path : 'admin/forget-password', component: ForgetPasswordComponent},
   {path: 'admin/reset-password',component:ResetPasswordComponent}
 ];
   
   @NgModule({
-    imports: [RouterModule.forRoot(route, { useHash: true, initialNavigation: 'enabled' })],
+    imports: [RouterModule.forRoot(route, { useHash: true, initialNavigation: 'enabled'})],
     exports: [RouterModule]
   })
   export class AppRoutingModule { }
