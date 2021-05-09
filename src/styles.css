@@ -7,3 +7,6 @@
 @import "~assets/plugins/switchery/switchery.min.css";
 @import "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css";
 @import "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

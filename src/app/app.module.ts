@@ -48,6 +48,7 @@ import { CouponBodyComponent } from './admin/body/coupons/coupon-body/coupon-bod
 import { CouponCreateComponent } from './admin/body/coupons/coupon-create/coupon-create.component';
 import { CouponIndexComponent } from './admin/body/coupons/coupon-index/coupon-index.component';
 import { CouponEditComponent } from './admin/body/coupons/coupon-edit/coupon-edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -95,7 +96,8 @@ import { CouponEditComponent } from './admin/body/coupons/coupon-edit/coupon-edi
     AngularFireModule.initializeApp(environment.firebaseConfig, 'Angular-ecommerce'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFireStorageModule, // Only required for storage features
+    AngularFireStorageModule,
+    BrowserAnimationsModule, // Only required for storage features
   ],
   providers: [],
   bootstrap: [AppComponent]
